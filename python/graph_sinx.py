@@ -20,3 +20,4 @@ ax1.spines['left'].set_position(('data',0))
 plt.title(r'$f(x)=sin x$') 
 plt.plot(x,y)
 plt.show()
+#测试

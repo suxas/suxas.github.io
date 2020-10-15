@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+# 索米の资源中心
 
-You can use the [editor on GitHub](https://github.com/suxas/suxas.github.io/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+------
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+资源中心正式营业啦！
 
-### Markdown
+那么以后的资源都会在这里分享，还有不久之后的Minecraft服务器也会在这里更新
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+感谢大家的关注和支持
 
-```markdown
-Syntax highlighted code block
+------
 
-# Header 1
-## Header 2
-### Header 3
+资源中心更新日志：
 
-- Bulleted
-- List
+v0.0.1 初探 2019年4月14日
 
-1. Numbered
-2. List
+v1.0.0 完工 2019年4月26日
 
-**Bold** and _Italic_ and `Code` text
+​	  	 2019年5月8日至5月10日，网站崩溃修复
 
-[Link](url) and ![Image](src)
-```
+v1.0.1 修复完成 2019年5月11日 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+**索米の方舟前线：642667391**
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/suxas/suxas.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

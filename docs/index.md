@@ -22,5 +22,5 @@ v1.0.1 修复完成 2019年5月11日
 
 **索米の方舟前线：642667391**
 
-
+https://github.com/5298opo/suxas.github.io/tree/main/python
 

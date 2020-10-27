@@ -10,7 +10,7 @@
 
 ③建立完毕
 
-2、安装VCCODE
+### 2、安装VCCODE
 
 ①进入官网 https://code.visualstudio.com/
 
@@ -24,7 +24,7 @@
 
 ⑤汉化完成
 
-3、实现Github在本地端和云端的数据同步
+### 3、实现Github在本地端和云端的数据同步
 
 ①云端建立Github库
 

@@ -20,7 +20,7 @@ class Ui_Form(object):
         self.pushButton_2.clicked.connect(self.button2)
 
         self.pushButton_3 = QtWidgets.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(100, 220, 201, 41))
+        self.pushButton_3.setGeometry(QtCore.QRect(100, 230, 201, 41))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.clicked.connect(self.button3)
 
@@ -32,7 +32,7 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "离散信号"))
         self.pushButton.setText(_translate("Form", "单位脉冲序列"))
         self.pushButton_2.setText(_translate("Form", "正弦信号"))
-        self.pushButton_3.setText(_translate("Form", "复指数信号"))
+        self.pushButton_3.setText(_translate("Form", "实指数信号"))
 
 class Function(QMainWindow,Ui_Form):
 	def __init__(self,parent=None):

@@ -12,7 +12,6 @@ class Ui_Form(object):
         self.pushButton = QtWidgets.QPushButton(Form)
         self.pushButton.setGeometry(QtCore.QRect(100, 30, 201, 41))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.button1)
 
         self.pushButton_2 = QtWidgets.QPushButton(Form)
         self.pushButton_2.setGeometry(QtCore.QRect(100, 130, 201, 41))
@@ -48,6 +47,7 @@ class Function(QMainWindow,Ui_Form):
 	def button3(self):
 		str3=('python button3.py')
 		os.system(str3)
+
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)

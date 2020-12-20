@@ -1,8 +1,9 @@
 #coding: UTF-8
 import wave
 import numpy as np
+import window
+import sys
 from matplotlib import pyplot as plt
- 
 def wave_analysis(file_path):
     f=wave.open(file_path,'rb')
     num=file_path[-5] 
@@ -50,12 +51,12 @@ def wave_analysis(file_path):
     plt.show()
     return max_freq,min_freq
     
- 
+
 def main():
     x=[]
     y=[]
     for i in np.arange(0,10):
-        path='F:/github/suxas.github.io/python/Term Project/sample/num_'+str(i)+'.wav'
+        path='F://github//suxas.github.io//python//Project//test.wav'
         max_freq,min_freq=wave_analysis(path)
         x.append(i)
         y.append(max_freq)

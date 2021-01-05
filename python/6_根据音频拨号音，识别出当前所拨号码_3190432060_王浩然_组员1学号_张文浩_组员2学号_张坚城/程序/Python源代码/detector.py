@@ -7,15 +7,8 @@ import argparse #argparse模块主要用来为脚本传递命令参数功能
 #根据先前样本分析后得出的频率
 dtmf = {(700, 1210): "1", (700, 1338): "2", (700, 1479): "3", (773, 1210): "4", (773, 1338): "5", (773, 1479): "6", (855, 1210): "7", (855, 1338): "8", (855, 1479): "9", (945, 1210): "*", (945, 1338): "0", (945, 1479): "#"}
 
-parser = argparse.ArgumentParser(description="DTMF双音多频信号识别器")
-#argparse是一个全面的参数处理库。当程序中有多个参数，调用parse_args()时，会先识别参数名称所有带前缀'-'的参数，然后再将剩余的参数按照顺序视为对应位置上的参数。 
-parser.add_argument('file', type=argparse.FileType('r'))
-#增加属性
-
-args = parser.parse_args()
-#属性赋予实例args
-
-file = args.file.name
+#开始读取文件并处理
+file = 'test//test.wav'
 try:
     fps, data = wavfile.read(file)
 except FileNotFoundError:
@@ -30,7 +23,7 @@ else:
     if len(data.shape) == 2: 
         data = data.sum(axis=1)
 
-precision = 0.1    #扫描精度
+precision = 0.17    #扫描精度
 duration = len(data)/fps
 step = int(len(data)//(duration//precision))
 c = ""

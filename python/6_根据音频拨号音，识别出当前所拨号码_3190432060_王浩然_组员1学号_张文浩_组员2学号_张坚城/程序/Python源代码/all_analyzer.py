@@ -1,7 +1,6 @@
 #coding: UTF-8
 import wave
 import numpy as np
-import window
 import sys
 from matplotlib import pyplot as plt
 #图表中文
@@ -9,35 +8,46 @@ from pylab import *
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 mpl.rcParams['axes.unicode_minus'] = False
 
-def wave_analysis(file_path):
-    f=wave.open(file_path,'rb')
-    num=file_path[-5] 
+def wave_analysis(file_name):
+    #读取音频
+    f=wave.open(file_name,'rb')     #读取wave文件 'rb'：读取模式
     params=f.getparams()
-    nchannels,samplewidth,framerate,nframes=params[:4]
-    str_data=f.readframes(nframes)
+    nchannels,samplewidth,framerate,nframes=params[:4]       #读取wave文件的声道数，量化位数，采样频率，采样点数
+    str_data=f.readframes(nframes)      #读取音频，字符串格式
     f.close()
-    wave_data=np.fromstring(str_data,dtype=np.short)
+
+    #开始处理音频
+    wave_data=np.fromstring(str_data,dtype=np.short)     #将字符串转为整型，准备进行计算   
+    #根据文件通道数量修改数组的列数
     wave_data.shape=-1,1
     if nchannels==2:
         wave_data.shape=-1,2
     else:
         pass
-    wave_data=wave_data.T
-    time=np.arange(0,nframes)*(1.0/framerate)
-    df=framerate/(nframes-1)
-    freq=[df*n for n in range(0,nframes)]
-    transformed=np.fft.fft(wave_data[0])
+    wave_data=wave_data.T       #数组转置
+    time=np.arange(0,nframes)*(1.0/framerate)       #通过取样点数和取样频率计算出每个取样的时间
+    df=framerate/(nframes-1)        #开始采样位置
+    freq=[df*n for n in range(0,nframes)]       #分辨率
+    transformed=np.fft.fft(wave_data[0])        #使用fft函数进行傅里叶变换
     d=int(len(transformed)/2)
+
+    #删去频率大于4000Hz的范围
     while freq[d]>4000:
         d-=10
     freq=freq[:d]
     transformed=transformed[:d]
+    #取y轴正方向振幅
     for i,data in enumerate(transformed):
         transformed[i]=abs(data)
+    
+    #生成图像
     plt.plot(freq,transformed,'b-')
     plt.xlabel('频率/赫兹')
     plt.ylabel(u'振幅')
     plt.title('频域振幅图')
+    plt.show()
+
+    #绘制散点图
     local_max=[]
     for i in np.arange(1,len(transformed)-1):
         if transformed[i]>transformed[i-1] and transformed[i]>transformed[i+1]:
@@ -47,17 +57,16 @@ def wave_analysis(file_path):
     max_freq=freq[loc1[0][0]]
     loc1=np.where(transformed==local_max[-2])
     min_freq=freq[loc1[0][0]]
-    plt.show()
     return max_freq,min_freq
-    plt.show()
     
 
 def main():
     x=[]
     y=[]
+    #绘制
     for i in np.arange(0,12):
-        path='C://Users//Suxas//Desktop//6_根据音频拨号音，识别出当前所拨号码_3190432060_王浩然_组员1学号_张文浩_组员2学号_张坚城//程序//原始测试数据集//降噪后的样本//num_'+str(i)+'.wav'
-        max_freq,min_freq=wave_analysis(path)
+        file_name='samples//num_'+str(i)+'.wav'
+        max_freq,min_freq=wave_analysis(file_name)
         x.append(i)
         y.append(max_freq)
         x.append(i)

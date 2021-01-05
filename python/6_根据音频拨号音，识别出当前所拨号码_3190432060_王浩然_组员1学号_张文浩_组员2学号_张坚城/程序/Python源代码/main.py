@@ -85,16 +85,16 @@ class Function(QMainWindow,Ui_MainWindow):
         self.setupUi(self)
         
     def button1(self):
-        str1=('ffmpeg -i test.m4a test.wav')
+        str1=('ffmpeg -i test//test.m4a test//test.wav')
         os.system(str1)
     def button2(self):
-        str2=('sox test.wav test_new.wav noisered noise.prof 0.21')
+        str2=('sox test//test.wav test//test_new.wav noisered noise.prof 0.23')
         os.system(str2)
     def button3(self):
         str1=('python single_analyzer.py')
         os.system(str1)
     def button4(self):
-        str1=('python detector.py test_new.wav')
+        str1=('python detector.py test//test_new.wav')
         os.system(str1)
     def button5(self):
         str1=('python all_analyzer.py')

@@ -1,6 +1,7 @@
 #coding: UTF-8
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 from scipy.io import wavfile
 import argparse #argparse模块主要用来为脚本传递命令参数功能
 
@@ -71,6 +72,7 @@ try:
             c = dtmf[(lf,hf)]
             print(c, end='', flush=True)
     print()
+    os.system('pause')
 
 except KeyboardInterrupt:
     print("\nCTRL+C退出...")

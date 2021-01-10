@@ -2,7 +2,7 @@
 
 ------
 
-## [附源代码](https://github.com/suxas/suxas.github.io/tree/main/python)
+## [附源代码](https://github.com/suxas/suxas.github.io/tree/main/python/exp_2)
 
 ### graph_exp
 

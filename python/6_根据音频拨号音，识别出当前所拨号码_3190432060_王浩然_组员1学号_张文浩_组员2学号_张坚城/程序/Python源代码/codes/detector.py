@@ -9,7 +9,7 @@ import argparse #argparse模块主要用来为脚本传递命令参数功能
 dtmf = {(700, 1210): "1", (700, 1338): "2", (700, 1479): "3", (773, 1210): "4", (773, 1338): "5", (773, 1479): "6", (855, 1210): "7", (855, 1338): "8", (855, 1479): "9", (945, 1210): "*", (945, 1338): "0", (945, 1479): "#"}
 
 #开始读取文件并处理
-file = 'test//test.wav'
+file = 'test//test_new.wav'
 try:
     fps, data = wavfile.read(file)
 except FileNotFoundError:
